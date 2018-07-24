@@ -69,12 +69,16 @@ void get_detection_info(image im, int num, float thresh, detection *dets, int cl
 
 yolo_handle yolo_init(char *darknet_path, char *datacfg, char *cfgfile, char *weightfile)
 {
+  printf("------------------------------------------------------\n");
 	#ifdef GPU
+		printf("welcome to pyolo-cl with gpu version\n");
+		printf("! using the first opencl device !\n");
     cl_set_device(0);
-		printf("gpu version\n");
 	#else
-		printf("cpu version\n");
+		printf("welcome to pyolo-cl with cpu version\n");
+		printf("! no hardware acceleration !\n");
 	#endif
+  printf("------------------------------------------------------\n");
   
 	yolo_obj *obj = (yolo_obj *)malloc(sizeof(yolo_obj));
 	if (!obj) return NULL;

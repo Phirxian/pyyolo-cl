@@ -32,8 +32,6 @@ __global__ void im2col_gpu_kernel(const int n, const float* data_im,
                 *data_col_ptr = (h >= 0 && w >= 0 && h < height && w < width) ?
                     data_im_ptr[i * width + j] : 0;
 
-                //*data_col_ptr = data_im_ptr[ii * width + jj];
-
                 data_col_ptr += height_col * width_col;
             }
         }
@@ -81,8 +79,6 @@ __kernel void im2col_gpu_kernel(const int n, __global const float* data_im,
 
                 data_col[data_col_offset] = (h >= 0 && w >= 0 && h < height && w < width) ?
                     data_im[data_im_offset + i * width + j] : 0;
-
-                //*data_col_ptr = data_im_ptr[ii * width + jj];
 
                 data_col_offset += height_col * width_col;
             }
