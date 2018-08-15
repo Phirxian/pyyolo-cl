@@ -1,3 +1,4 @@
+darknet_cu/build/*
 darknet_cl/build/*
 darknet/*
 build/*
