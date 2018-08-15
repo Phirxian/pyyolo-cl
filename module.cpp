@@ -3,8 +3,10 @@
 #include <numpy/arrayobject.h>
 #include <stdio.h>
 
-#include "./darknet_cl/darknet_cl/src/libyolo.h"
-#include "./darknet_cl/darknet_cl/src/image.h"
+//#include "./darknet_cl/darknet/src/libyolo.h"
+//#include "./darknet_cl/darknet/src/image.h"
+#include "./darknet_cu/darknet/src/libyolo.h"
+#include "./darknet_cu/darknet/src/image.h"
 
 static PyObject *PyyoloError;
 static yolo_handle g_handle = NULL;
